@@ -15,6 +15,11 @@
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+;设置command键为meta
+(setq mac-command-key-is-meta t)
+;自定义文件位置
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
 
 ;; Initialize package sources
 (require 'package)
@@ -27,9 +32,17 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+(setq use-package-verbose nil)
 
-(require 'use-package)
 (setq use-package-always-ensure t)
+(column-number-mode)
+(global-display-line-numbers-mode t)
+;; Disable line numbers for some modes
+(dolist (mode '(org-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 ;;; package 使用
 ;; :init 在 package 加载之前执行
@@ -46,7 +59,10 @@
 ;; :commands 创建自动加载，参数为 symbol 或 symbol 列表
 
 ;; 监听当前 buffer 命令，并显示
-;(use-package command-log-mode)
+(use-package command-log-mode)
+(use-package doom-modeline
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
 
 ;(buse-package which-key
 ;  :init (which-key-mode)
