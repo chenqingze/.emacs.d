@@ -2,7 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-;; 加载包管理器
+
+;; cl - Common Lisp Extension
+(require 'cl-lib)
+;; 包管理器
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("melpa-stable" . "https://stable.melpa.org/packages/")
@@ -18,7 +21,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (eval-when-compile (require 'use-package))
-;(require 'diminish)               
+;;(require 'diminish)               
 (require 'bind-key)               
 
 (setq use-package-verbose nil)

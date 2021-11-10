@@ -7,7 +7,10 @@
 ;;; Code:
 
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
-;;(setq debug-on-error t)
+;; Activate debugging.
+(setq debug-on-error t
+      debug-on-signal nil
+      debug-on-quit nil)
 
 ;; 通过设置启动时（启动前和启动后）的垃圾回收阀门值来减少启动时间
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
@@ -24,15 +27,17 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; 配置用户定制化信息文件位置
-(setq custom-file (locate-user-emacs-file "custom.el"))
+(setq custom-file (locate-user-emacs-file "lisp/custom.el"))
 
 (require 'init-package)
-(require 'init-basic)
+(require 'init-other)
+(require 'init-gui-frames)
+(require 'init-themes)
 (require 'init-macos-keys)
-
+(require 'init-org)
 ;; Variables configured via the interactive 'customize' interface
 (when (file-exists-p custom-file)
-  (load custom-file))
+  (load custom-file 'no-error 'no-message))
 
 (provide 'init)
 
