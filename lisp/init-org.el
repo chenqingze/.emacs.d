@@ -52,6 +52,20 @@
   :hook
   (org-mode . (lambda () (org-bullets-mode 1))))
 
+(use-package org-agenda
+  :ensure nil
+  :after org
+  :bind
+  ("C-c a" . org-agenda)
+  :custom
+  (org-agenda-include-diary t)
+  (org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s")
+                              ;; Indent todo items by level to show nesting
+                              (todo . " %i %-12:c%l")
+                              (tags . " %i %-12:c")
+                              (search . " %i %-12:c")))
+  (org-agenda-start-on-weekday nil))
+
 
 
 
