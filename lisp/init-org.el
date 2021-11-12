@@ -33,7 +33,7 @@
   ;;            (push '("[X]" . "☑" ) prettify-symbols-alist)
   ;;            (push '("[-]" . "⊡" ) prettify-symbols-alist)
   ;;            (prettify-symbols-mode)));美化复选框列表
-  ;;(org-mode . visual-line-mode)
+  (org-mode . visual-line-mode)
   ;;(org-mode . variable-pitch-mode)
   ;;:config
   ;; 下面两种模式下禁用 buffer-face-mode和visual-line-mode
