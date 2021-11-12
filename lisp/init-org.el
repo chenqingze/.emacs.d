@@ -7,7 +7,7 @@
   ;;(:map org-mode-map
   ;; <<org-mode-keybindings>>)
   :custom
-  (org-directory "~/famphony");org文件默认保存目录
+  (org-directory "~/chenqingze.github.io");org文件默认保存目录
   (org-log-done t);待办事项自动记录完成时间
   (org-startup-indented t);保持良好的缩紧结构
   (org-log-into-drawer t);开启跟踪日志
