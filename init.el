@@ -35,6 +35,7 @@
 (require 'init-themes)
 (require 'init-macos-keys)
 (require 'init-org)
+(require 'init-markdown)
 ;; Variables configured via the interactive 'customize' interface
 (when (file-exists-p custom-file)
   (load custom-file 'no-error 'no-message))
