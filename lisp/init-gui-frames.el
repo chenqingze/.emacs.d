@@ -38,11 +38,20 @@
 ;; 禁用菜单栏
 (menu-bar-mode -1)
 
-;; 更改光标的样式（不能生效，解决方案见第二集）
+;; 更改光标的样式
 (setq-default cursor-type 'bar)
 
 ;; 显示行号
 (global-display-line-numbers-mode t)
+
+;; 设置光标颜色:绿色
+(set-cursor-color "#00ff00")
+
+;; 设置当前光标处高亮
+(setq highlight-symbol-at-point t)
+
+;; 高亮提示光标所在当前行
+(global-hl-line-mode t)
 
 ;; 禁掉一些模式的行号
 (dolist (mode '(org-mode-hook
