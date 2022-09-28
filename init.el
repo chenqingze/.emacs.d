@@ -36,7 +36,10 @@
 (require 'init-macos-keys)
 (require 'init-org)
 (require 'init-markdown)
+(require 'init-lsp)
 (require 'init-rust)
+(require 'init-auto-completion)
+(require 'init-debug)
 ;; Variables configured via the interactive 'customize' interface
 (when (file-exists-p custom-file)
   (load custom-file 'no-error 'no-message))

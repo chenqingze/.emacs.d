@@ -8,9 +8,9 @@
 ;; 包管理器
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("melpa-stable" . "https://stable.melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+    			 ("melpa-stable" . "https://stable.melpa.org/packages/")
+		    	 ("org" . "https://orgmode.org/elpa/")
+           ("elpa" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
 ;; 如果又没安装的package 则安装
 (unless package-archive-contents
